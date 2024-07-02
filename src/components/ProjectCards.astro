@@ -1,0 +1,18 @@
+---
+interface Props {
+	title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<div class="rounded-md shadow-md mb-10 p-5 flex dark:border-[1px] border-[#d2d2d2] overflow-hidden hover:border-[#2776e9] transition-all">
+
+    <div>
+        <h1 class="font-bold text-[#2776e9] text-xl">{title}</h1>
+        <h1 class="text-lg w-4/5">
+            <slot/>
+        </h1>
+    </div>
+    <img src="profile-img.jpg" class="w-[100px] h-[100px] rounded">
+</div>

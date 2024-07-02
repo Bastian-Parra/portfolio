@@ -1,0 +1,11 @@
+---
+interface Props {
+    clase: string;
+}
+
+const { clase } = Astro.props;
+---
+
+<section class=`w-full ${clase} mx-auto lg:w-[850px] justify-center flex-rox mb-20`>
+    <slot />
+</section>
