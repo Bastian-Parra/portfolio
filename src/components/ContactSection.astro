@@ -3,31 +3,54 @@ import SectionContainer from "./SectionContainer.astro"
 import Email from './icons/Email.astro'
 import Message from './icons/Message.astro'
 import Name from './icons/Name.astro'
+import { useState } from "react";
+
+const handleSubmit = `
+    document.addEventListener('DOMContentLoaded', function() {
+        const form = document.querySelector('form');
+        form.addEventListener('submit', async(event) => {
+            event.preventDefault();
+            const formData = new FormData(form);
+            const data = Object.fromEntries(formData);
+        }
+
+        try {
+            const res = await fetch('/api/contact', {
+ mc |            method: 'POST',
+                headers: {'content-type': 'application/json'},
+                body: JSON.stringify(data)
+            })
+
+            const result = await response.json()
+            alert(result.message)
+            form.reset()
+        } catch (err) {
+            console.error('Error:', err)
+            alert("There was an error sending your message")
+        }
+    })
+`
 ---
 
 <SectionContainer clase="">
     <h1 class="text-3xl font-bold text-[#2776e9] text-center pb-5">Contact Form</h1>
-    <form action="" class="flex flex-col w-3/5 m-auto border-[1px] border-[#000] dark:border-[#fff] p-10 rounded-lg">
-
-    <div class="flex gap-2 mb-2">
-        <Name/>
+    <form onsubmit={handleSubmit} class="flex flex-col w-3/5 m-auto border-[1px] border-[#000] dark:border-[#fff] p-10 rounded-lg">
+      <div class="flex gap-2 mb-2">
         <label class="mb-1" for="name">Name</label>
-    </div>
-    <input class="border-[1px] shadow rounded p-2 mb-5 outline-none text-xs" placeholder="Ex: Bastian Parra" type="text" name="name">
-    
-    <div class="flex gap-2 mb-2">
-        <Email/>
+      </div>
+      <input class="border-[1px] shadow rounded p-2 mb-5 outline-none text-xs" placeholder="Ex: Bastian Parra" type="text" name="name" required>
+  
+      <div class="flex gap-2 mb-2">
         <label class="mb-1" for="email">Email</label>
-    </div>
-    <input class="border-[1px] shadow rounded p-2 mb-5 outline-none text-xs" placeholder="Ex: bastian@gmail.com" type="email" name="email">
-
-    <div class="flex gap-2 mb-2">
-        <Message/>
-        <label class="mb-1">Message</label>
-    </div>
-    <textarea class=" min-h-28 max-h-28 border-[1px] shadow rounded p-2 mb-5 outline-none text-xs" placeholder="Write me something!" rows="4" cols="50" id=""></textarea>
-
-    <button class="w-full bg-[#2776e9] text-white p-2 rounded hover:bg-[#1f60d6] font-bold" type="submit">Submit</button>
+      </div>
+      <input class="border-[1px] shadow rounded p-2 mb-5 outline-none text-xs" placeholder="Ex: bastian@gmail.com" type="email" name="email" required>
+  
+      <div class="flex gap-2 mb-2">
+        <label class="mb-1" for="message">Message</label>
+      </div>
+      <textarea class="min-h-28 max-h-28 border-[1px] shadow rounded p-2 mb-5 outline-none text-xs" placeholder="Write me something!" name="message" rows="4" required></textarea>
+  
+      <button class="w-full bg-[#2776e9] text-white p-2 rounded hover:bg-[#1f60d6] font-bold" type="submit">Submit</button>
     </form>
-</SectionContainer>
+  </SectionContainer>
 
