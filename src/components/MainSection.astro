@@ -3,16 +3,17 @@ import Badge from "./Badge.astro";
 import SectionContainer from "./SectionContainer.astro";
 ---
 
-<SectionContainer clase="py-44">
-    <h1 class="text-5xl font-bold pb-5 " ->Hola, soy Bastian Parra 👋</h1>
-    <h2 class="text-xl pb-5">
-        Desarrollador Web de Quintero, Chile. Especializado en la creación de aplicaciones únicas y dar solución a desafios técnologicos.
-    </h2>
-    <Badge
-        ><a href="https://www.linkedin.com/in/bastian-parra-bernal-668156301/"
-            >Linkedin</a
-        ></Badge
-    >
-    <Badge><a href="https://github.com/Bastian-Parra">GitHub</a></Badge>
-    <Badge><a href="">Correo</a></Badge>
+<SectionContainer clase="py-44 flex-col items-center justify-center">
+  <h1 class="text-5xl font-bold pb-5" ->Hola, soy Bastian Parra 👋</h1>
+  <h2 class="text-xl pb-5">
+    Desarrollador Web de Quintero, Chile. Especializado en la creación de
+    aplicaciones únicas y dar solución a desafios técnologicos.
+  </h2>
+  <Badge
+    ><a href="https://www.linkedin.com/in/bastian-parra-bernal-668156301/"
+      target="_blank">Linkedin</a
+    ></Badge
+  >
+  <Badge><a href="https://github.com/Bastian-Parra" target="_blank">GitHub</a></Badge>
+  <Badge><a href="">Correo</a></Badge>
 </SectionContainer>

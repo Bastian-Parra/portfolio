@@ -1,23 +1,38 @@
 ---
 import SkillsCard from "./ProjectCards.astro";
+import TechBadge from "./TechBadge.astro";
 ---
 
 <div class="h-auto">
-    <SkillsCard title="Aplicación de Seguridad Pública">
-        Durante mi práctica profesional en la Municipalidad de Quintero, 
-        desarrollé un sistema de gestión de reportes de incidentes para
-        el Departamento de Seguridad Pública, en especial enfocado en el área CEMCO (Central de Comunicaciones).
-    </SkillsCard>
-    <SkillsCard title="Proyecto 2">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat,
-            natus veniam. A minima ipsum temporibus recusandae nobis ex beatae
-            quia pariatur saepe asperiores, accusantium voluptates dolorem
-            obcaecati quidem perspiciatis officiis.
-    </SkillsCard>
-    <SkillsCard title="Proyecto 3">
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-            Praesentium sit deleniti voluptates dolor, adipisci expedita quidem
-            possimus ab explicabo, earum velit! Nihil corrupti explicabo in
-            debitis ad at sapiente cumque.
-    </SkillsCard>
+  <SkillsCard title="Aplicación de Seguridad Pública">
+    <div class="mt-2 mb-2 text-justify">
+      Durante mi práctica profesional en la Municipalidad de Quintero,
+      desarrollé un sistema de gestión de reportes de incidentes para el
+      Departamento de Seguridad Pública, en especial enfocado en el área CEMCO
+      (Central de Comunicaciones).
+    </div>
+    <div>
+      <TechBadge text="Node.js" />
+      <TechBadge text="MySQL" />
+      <TechBadge text="React" />
+    </div>
+  </SkillsCard>
+  <SkillsCard title="Directorio de Lugares Turísticos ( Educacional )">
+    <div class="mt-2 mb-2 text-justify">
+      Durante mi práctica profesional en la Municipalidad de Quintero,
+      desarrollé un sistema de gestión de reportes de incidentes para el
+      Departamento de Seguridad Pública, en especial enfocado en el área CEMCO
+      (Central de Comunicaciones).
+    </div>
+    <div>
+      <TechBadge text="Node.js" />
+      <TechBadge text="MySQL" />
+      <TechBadge text="React" />
+    </div>
+  </SkillsCard>
+  <SkillsCard title="Proyecto 3">
+    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Praesentium sit
+    deleniti voluptates dolor, adipisci expedita quidem possimus ab explicabo,
+    earum velit! Nihil corrupti explicabo in debitis ad at sapiente cumque.
+  </SkillsCard>
 </div>
